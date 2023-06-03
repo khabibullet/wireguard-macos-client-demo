@@ -5,9 +5,7 @@
 //  Created by Irek Khabibullin on 18.05.2023.
 //
 
-import Cocoa
-import WireGuardKit
-import NetworkExtension
+import AppKit
 
 class MainViewController: NSViewController, NSWindowDelegate {
     
@@ -178,24 +176,7 @@ class MainViewController: NSViewController, NSWindowDelegate {
     }
     
     func setupTunnel() {
-        var tunnel: TunnelConfiguration!
-        switch TunnelConfiguration.createMock() {
-        case .success(let config):
-            tunnel = config
-        case .failure(let error):
-            print(error.localizedDescription)
-            return
-        }
-        let proto = NETunnelProviderProtocol()
-        proto.providerConfiguration = ["UID": getuid()]
-        proto.providerBundleIdentifier = Bundle.main.bundleIdentifier!
-                                                + ".network-extension"
-        proto.serverAddress = tunnel.peers.first!.endpoint?.stringRepresentation
         
-        let tunnelProviderManager = NETunnelProviderManager()
-        tunnelProviderManager.protocolConfiguration = proto
-        tunnelProviderManager.localizedDescription = tunnel.name
-        tunnelProviderManager.isEnabled = true
     }
     
 }

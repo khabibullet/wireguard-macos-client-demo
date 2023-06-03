@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import WireGuardKit
-
 
 struct MockConfig {
     
