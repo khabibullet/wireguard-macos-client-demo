@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct TunnelInterface: Codable {
+    
+    var privateKey: String
+    var address: String
+    var dns: String
+    
+}

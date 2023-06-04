@@ -7,17 +7,10 @@
 
 import Foundation
 
-enum WGInterface
-
-enum WGHelperStatus {
+enum WGConnectionStatus {
     
-    case noSuchConfig
-    
-    
-    var localizedString: String {
-        switch self {
-            
-        }
-    }
+    case connected
+    case disconnected
     
 }
+

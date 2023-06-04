@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct TunnelPeer: Codable {
+    
+    var publicKey: String
+    var presharedKey: String
+    var allowedIPs: [String]
+    var persistentKeepalive: Int
+    var endpoint: String
+    
+}

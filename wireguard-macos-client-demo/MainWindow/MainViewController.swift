@@ -176,7 +176,7 @@ class MainViewController: NSViewController, NSWindowDelegate {
     }
     
     func setupTunnel() {
-        
+        print(NSTemporaryDirectory())
     }
     
 }
