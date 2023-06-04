@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Peer endpoint</key>
+	<string>194.35.116.232:51820</string>
+	<key>Peer allowed IPs</key>
+	<array>
+		<string>::/0</string>
+		<string>0.0.0.0/0</string>
+	</array>
+	<key>Peer persistent keep alive</key>
+	<integer>0</integer>
+	<key>Tunnel name</key>
+	<string>Irek_mac</string>
+	<key>Interface dns</key>
+	<string>1.1.1.1</string>
+	<key>Interface address</key>
+	<string>10.8.0.44/24</string>
+	<key>Interface private key</key>
+	<string>EFSmQBsytiwN79flEYMRG4a3pBqj5vNzAZW6urGQHE8=</string>
+	<key>Peer public key</key>
+	<string>V29JqaPLMNWAOflhizVKQUbAHO2AXw6JGVMtQxlbJEw=</string>
+	<key>Peer preshared key</key>
+	<string>eonV36cyiQ/eE7RuN8C9GA9kYdJm68F6L4f/a6ZH+i0=</string>
+</dict>
+</plist>

@@ -7,6 +7,34 @@
 
 import Foundation
 
+extension TunnelConfig {
+    
+    private static let propertiesDict: NSDictionary? = {
+        if let path = Bundle.main.path(forResource: "MockConfig", ofType: ".plist") {
+            return NSDictionary(contentsOfFile: path)
+        } else {
+            return nil
+        }
+    }()
+    
+    static let mock: TunnelConfig? = {
+        guard let dict = propertiesDict else { return nil }
+        
+        let interface = TunnelInterface(
+            privateKey: dict.object(forKey: "Interface private key") as! String,
+            address: dict.object(forKey: "Interface address") as! String,
+            dns: dict.object(forKey: "Interface dns") as! String
+        )
+        let peer = TunnelPeer(
+            publicKey: dict.object(forKey: "Interface dns") as! String,
+            endpoint: dict.object(forKey: "Interface dns") as! String,
+            allowedIPs: dict.object(forKey: "Interface dns") as! [String]
+        )
+        return TunnelConfig(name: "Irek_mac", interface: interface, peers: [peer])
+    }()
+    
+}
+
 struct MockConfig {
     
     static let propertiesDict: NSDictionary? = {
