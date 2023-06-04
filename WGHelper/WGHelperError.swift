@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum WGHelperError {
+    
+    static let decodeError = NSError(
+        domain: "WGHelperDecodeError", code: 0,
+        userInfo: [NSLocalizedDescriptionKey : "Cannot decode pipe output."]
+    )
+    
+}

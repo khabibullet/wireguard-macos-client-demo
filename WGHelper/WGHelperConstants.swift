@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+enum WGHelperConstants {
+    
+    static let helpersFolder = "/Library/PrivilegedHelperTools/"
+    static let domain = "com.khabibullet.wg-cli.helper"
+    static let helperPath = helpersFolder + domain
+    
+}

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+@objc(WGHelperProtocol)
+public protocol WGHelperProtocol {
+    
+    @objc
+    func wireguardShow(completion: @escaping (String?, Error?) -> Void)
+    
+}
