@@ -24,6 +24,7 @@ class WGHelper: NSObject, NSXPCListenerDelegate, WGHelperProtocol {
     // MARK: - Functions // MARK: HelperProtocol
 
     func wireguardShow(completion: @escaping (String?, Error?) -> Void) {
+        NSLog("Helper launching command")
         do {
             try executeScript(path: "/usr/local/bin/wg", args: ["show"], completion: { result in
                 switch result {
@@ -47,7 +48,9 @@ class WGHelper: NSObject, NSXPCListenerDelegate, WGHelperProtocol {
 
     func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
         newConnection.exportedInterface = NSXPCInterface(with: WGHelperProtocol.self)
-        newConnection.remoteObjectInterface = NSXPCInterface(with: RemoteApplicationProtocol.self)
+        newConnection.remoteObjectInterface = NSXPCInterface(
+            with: RemoteApplicationProtocol.self
+        )
         newConnection.exportedObject = self
 
         newConnection.resume()

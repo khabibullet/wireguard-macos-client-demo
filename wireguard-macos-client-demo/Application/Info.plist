@@ -5,9 +5,13 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
-		<dict/>
+		<dict>
+		</dict>
 	</dict>
 	<key>SMPrivilegedExecutables</key>
-	<dict/>
+	<dict>
+		<key>com.khabibullet.wg-cli.helper</key>
+		<string>identifier "com.khabibullet.wg-cli.helper" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: irek.rifson@gmail.com (5772WS4H46)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+	</dict>
 </dict>
 </plist>

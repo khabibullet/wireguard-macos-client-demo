@@ -6,6 +6,7 @@
 //
 
 import AppKit
+import com_khabibullet_wg_cli_helper
 
 class MainViewController: NSViewController, NSWindowDelegate {
     
@@ -108,8 +109,8 @@ class MainViewController: NSViewController, NSWindowDelegate {
         
         stack.isHidden = false
         
+        setupConnectionStatus()
         updateUi()
-        setupTunnel()
     }
     
     private func prepareUiToUpdate() {
@@ -175,8 +176,22 @@ class MainViewController: NSViewController, NSWindowDelegate {
         })
     }
     
-    func setupTunnel() {
-        print(NSTemporaryDirectory())
+    func setupConnectionStatus() {
+        do {
+            NSLog("setting up connection")
+            let remote = try WGHelperRemote().getRemote()
+            print("remote: \(remote)")
+            remote.wireguardShow(completion: { output, error in
+                print("wireguard show completion")
+                guard let output = output else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                print("here is wireguard show output: \(output)")
+            })
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
 }
